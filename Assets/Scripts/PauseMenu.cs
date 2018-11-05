@@ -14,11 +14,12 @@ public class PauseMenu : MonoBehaviour {
 	void Update () {
 		
 	}
+    // Main Menu Button when clicked to change scene to 'Main Menu' Scene.
     public void ButtonExit()
     {
         SceneManager.LoadScene("Main Menu");
     }
-
+    // Resume Button when clicked to resume the current scene.
     public void ButtonResume()
     {
         Time.timeScale = 1;
