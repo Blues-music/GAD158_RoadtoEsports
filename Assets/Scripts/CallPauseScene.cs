@@ -13,7 +13,7 @@ public class CallPauseScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		// When the Escape Key is pressed. open up scene 'Pause menu' Over the top of current scene.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0;

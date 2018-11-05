@@ -14,12 +14,12 @@ public class MainMenu : MonoBehaviour {
     void Update() {
 
     }
-
+    // once  Play Button is clicked, load scene "1"
     public void Play ()
     {
         SceneManager.LoadScene(1);
     }
-
+    // once clicked, quit the game/application.
     public void Quit()
     {
         Application.Quit();
