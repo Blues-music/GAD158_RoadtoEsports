@@ -5,12 +5,14 @@ using UnityEngine;
 public class Minigame_CircleSquash : MonoBehaviour {
 
     float time;
-    bool killCircle = false;
+    float points;
+    public float maxpoints = 100;
+    
 
     // Use this for initialization
     void Start() {
         transform.localScale = new Vector3(0, 0, 0);
-
+     
     }
 
     // Update is called once per frame
@@ -27,21 +29,15 @@ public class Minigame_CircleSquash : MonoBehaviour {
         else if (time % 2 < 1)
         {
             transform.localScale += new Vector3(0.1F, 0.1F, 0);
-            killCircle = true;
-
             
         }
-
+      points = maxpoints/time;
     }
 
-    public void killing()
-    { 
-    
-          if (killCircle == true)
-        {
-            Destroy(gameObject);
-            Debug.Log("destroyed");
-        }
-    }
-    
+    public void OnMouseDown()
+    {
+        Debug.Log("destroyed");
+        Destroy(gameObject);
+        Debug.Log("points" + points);
+    }    
 }
