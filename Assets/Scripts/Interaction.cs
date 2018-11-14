@@ -19,11 +19,17 @@ public class Interaction
 }
     public class ActivityBonus
     {
-        public int ActivityAttributeBonus(int attribute, int bonus)
+
+        // Function to grant increment to only 1 attribute
+        public int DexBonus(int attribute, int bonus)
         {
-            attribute = attribute + bonus;
-            Debug.Log(attribute);
-            return attribute;
+            // Takes the player scripts dex and adds a bonus
+            // Would like to add functionality to give diminishing returns
+            PlayerScript.dex = attribute + bonus;
+            Debug.Log(PlayerScript.dex);
+            return PlayerScript.dex;
         }
+
+       
     }
 

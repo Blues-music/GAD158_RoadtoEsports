@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class PlayerScript : MonoBehaviour {
 
     // Character's move speed value
     public float moveSpeed;
@@ -14,21 +14,29 @@ public class Player : MonoBehaviour {
     private Animator animator;
 
     // Initialising attributes
-    public int str;
-    public int agi;
-    public int dex;
-    public int iq;
+    static public int str;
+    static public int agi;
+    static public int dex;
+    static  public int iq;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
+
         animator = GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        str = 0;
+        agi = 0;
+        dex = 0;
+        iq = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         // Code that allows player to move character
-        if ( Input.GetAxisRaw("Horizontal") > 0.2f || Input.GetAxisRaw("Horizontal") < -0.2f)
+        if (Input.GetAxisRaw("Horizontal") > 0.2f || Input.GetAxisRaw("Horizontal") < -0.2f)
         {
             transform.Translate(new Vector3((Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime), 0f, 0f));
         }
@@ -38,6 +46,7 @@ public class Player : MonoBehaviour {
             transform.Translate(new Vector3(0f, (Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime), 0f));
         }
 
+        // Code to set the animations
         animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
     }
