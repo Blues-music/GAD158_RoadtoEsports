@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb41cbb0f5daa534c88a5716ed797ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle1: {fileID: 1441685103268462, guid: 1bd5baf87a9ba4d4f96eca1583c469fb, type: 2}
+  circle1: {fileID: 1815294236343232, guid: 133c8674dc914d948b12ded1e0f65861, type: 2}
   spwnposition1: {fileID: 596802219}
   spwnposition2: {fileID: 724859695}
   spwnposition3: {fileID: 1904163370}
@@ -498,6 +498,7 @@ MonoBehaviour:
   spwnposition6: {fileID: 861676094}
   choosespwn: 1
   spwndelay: 1
+  timer: 0
 --- !u!1 &1866666667
 GameObject:
   m_ObjectHideFlags: 0
