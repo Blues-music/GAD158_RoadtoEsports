@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Minigame_CircleSquash : MonoBehaviour {
+public class Minigame_CircleSquash : MonoBehaviour
+{
 
     float time;
-    float points;
     public float maxpoints = 100;
-    
+
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         transform.localScale = new Vector3(0, 0, 0);
-     
     }
-
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
         time = time + Time.deltaTime;
 
@@ -29,15 +29,20 @@ public class Minigame_CircleSquash : MonoBehaviour {
         else if (time % 2 < 1)
         {
             transform.localScale += new Vector3(0.1F, 0.1F, 0);
-            
+
         }
-      points = maxpoints/time;
+
     }
+
+
 
     public void OnMouseDown()
     {
+
         Debug.Log("destroyed");
+     
         Destroy(gameObject);
-        Debug.Log("points" + points);
-    }    
+
+    }
 }
+ 
