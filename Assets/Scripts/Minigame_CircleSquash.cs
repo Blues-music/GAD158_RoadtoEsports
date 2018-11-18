@@ -24,13 +24,15 @@ public class Minigame_CircleSquash : MonoBehaviour
 
         if (time % 2 > 1)
         {
-            transform.localScale -= new Vector3(0.1f, 0.1f, 0);
+            transform.localScale -= new Vector3(0.05f, 0.05f, 0);
         }
         else if (time % 2 < 1)
         {
-            transform.localScale += new Vector3(0.1F, 0.1F, 0);
+            transform.localScale += new Vector3(0.05F, 0.05F, 0);
 
         }
+
+        Destroy(gameObject, 2);
 
     }
 
@@ -42,7 +44,7 @@ public class Minigame_CircleSquash : MonoBehaviour
         Debug.Log("destroyed");
      
         Destroy(gameObject);
-
+        Score.scoreValue += 1;
     }
 }
  
