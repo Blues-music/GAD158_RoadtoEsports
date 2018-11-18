@@ -13,6 +13,11 @@ public class spawner : MonoBehaviour {
     public Transform spwnposition4;
     public Transform spwnposition5;
     public Transform spwnposition6;
+    public Transform spwnposition7;
+    public Transform spwnposition8;
+    public Transform spwnposition9;
+    public Transform spwnposition10;
+    public Transform spwnposition11;
 
     public int choosespwn;
     [SerializeField]
@@ -29,7 +34,7 @@ public class spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        choosespwn = Random.Range(1, 7);
+        choosespwn = Random.Range(1, 12);
 
         if (shouldspwn() && choosespwn == 1)
         {
@@ -67,7 +72,37 @@ public class spawner : MonoBehaviour {
             spawn6();
             timer -= 1;
         }
-        if(timer == 0)
+        else
+        if (shouldspwn() && choosespwn == 7)
+        {
+            spawn7();
+            timer -= 1;
+        }
+        else
+        if (shouldspwn() && choosespwn == 8)
+        {
+            spawn8();
+            timer -= 1;
+        }
+        else
+        if (shouldspwn() && choosespwn == 9)
+        {
+            spawn9();
+            timer -= 1;
+        }
+        else
+        if (shouldspwn() && choosespwn == 10)
+        {
+            spawn10();
+            timer -= 1;
+        }
+        else
+        if (shouldspwn() && choosespwn == 11)
+        {
+            spawn11();
+            timer -= 1;
+        }
+        if (timer == 0)
         {
             timer = 0;
             
@@ -115,6 +150,36 @@ public class spawner : MonoBehaviour {
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition6.transform.position, transform.rotation);
+        destroyaftertime();
+    }
+    private void spawn7()
+    {
+        nxtspwntime = Time.time + spwndelay;
+        Instantiate(circle1, spwnposition7.transform.position, transform.rotation);
+        destroyaftertime();
+    }
+    private void spawn8()
+    {
+        nxtspwntime = Time.time + spwndelay;
+        Instantiate(circle1, spwnposition8.transform.position, transform.rotation);
+        destroyaftertime();
+    }
+    private void spawn9()
+    {
+        nxtspwntime = Time.time + spwndelay;
+        Instantiate(circle1, spwnposition9.transform.position, transform.rotation);
+        destroyaftertime();
+    }
+    private void spawn10()
+    {
+        nxtspwntime = Time.time + spwndelay;
+        Instantiate(circle1, spwnposition10.transform.position, transform.rotation);
+        destroyaftertime();
+    }
+    private void spawn11()
+    {
+        nxtspwntime = Time.time + spwndelay;
+        Instantiate(circle1, spwnposition11.transform.position, transform.rotation);
         destroyaftertime();
     }
 
