@@ -8,6 +8,8 @@ public class Minigame_CircleSquash : MonoBehaviour
     float time;
     public float maxpoints = 100;
 
+    // Initiating victory text for referencing 
+    public GameObject victoryText;
 
     // Use this for initialization
     void Start()
@@ -34,6 +36,10 @@ public class Minigame_CircleSquash : MonoBehaviour
 
         Destroy(gameObject, 2);
 
+        if (Score.scoreValue == 10)
+        {
+            victoryText.SetActive(true);
+        }
     }
 
 
@@ -44,7 +50,10 @@ public class Minigame_CircleSquash : MonoBehaviour
         Debug.Log("destroyed");
      
         Destroy(gameObject);
+        // Using from "Score" script
         Score.scoreValue += 1;
     }
+
+    
 }
  

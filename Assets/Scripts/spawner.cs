@@ -1,8 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class spawner : MonoBehaviour {
+
+    // Initiating UI elements for referencing 
+    public GameObject victoryText;
+    public GameObject exitButton;
 
     private float nxtspwntime;
     [SerializeField]
@@ -110,6 +115,13 @@ public class spawner : MonoBehaviour {
         }
         spwndelay = Random.Range(0, 4);
 
+        // Ends game when score is reached
+        if (Score.scoreValue == 20)
+        {
+            Time.timeScale = 0;
+            victoryText.SetActive(true);
+            exitButton.SetActive(true);
+        }
     }
     private bool shouldspwn()
     {
@@ -186,5 +198,10 @@ public class spawner : MonoBehaviour {
     public void destroyaftertime()
     {
         
+    }
+
+    public void ExitToRoomScene()
+    {
+        SceneManager.LoadScene("Room");
     }
 }
