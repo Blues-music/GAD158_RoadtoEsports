@@ -26,6 +26,8 @@ public class PlayerScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        moveSpeed = 4;
+
         animator = GetComponent<Animator>();
 
         str = 0;

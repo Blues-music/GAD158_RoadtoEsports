@@ -203,5 +203,6 @@ public class spawner : MonoBehaviour {
     public void ExitToRoomScene()
     {
         SceneManager.LoadScene("Room");
+        Time.timeScale = 1;
     }
 }
