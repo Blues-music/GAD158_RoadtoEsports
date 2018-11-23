@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class spawner : MonoBehaviour {
 
-    // Initiating UI elements for referencing 
+    // Declaring UI elements for referencing 
     public GameObject victoryText;
     public GameObject exitButton;
 
@@ -38,7 +38,10 @@ public class spawner : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update (){
+
+        // Initialising choosespwn as random range
+        // Each int in the range represents a spawn location
         choosespwn = Random.Range(1, 12);
 
         if (shouldspwn() && choosespwn == 1)
@@ -123,16 +126,21 @@ public class spawner : MonoBehaviour {
             exitButton.SetActive(true);
         }
     }
+
     private bool shouldspwn()
     {
         return Time.time > nxtspwntime;
     }
+
+    // Here lie the spawn location for the targets
+    // These are called when their correlating value in choosespwn comes up
     private void spawn1()
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition1.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn2()
     {
         nxtspwntime = Time.time + spwndelay;
@@ -146,48 +154,56 @@ public class spawner : MonoBehaviour {
         Instantiate(circle1, spwnposition3.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn4()
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition4.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn5()
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition5.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn6()
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition6.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn7()
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition7.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn8()
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition8.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn9()
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition9.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn10()
     {
         nxtspwntime = Time.time + spwndelay;
         Instantiate(circle1, spwnposition10.transform.position, transform.rotation);
         destroyaftertime();
     }
+
     private void spawn11()
     {
         nxtspwntime = Time.time + spwndelay;
@@ -200,6 +216,7 @@ public class spawner : MonoBehaviour {
         
     }
 
+    // Function to transition from minigame to room scene
     public void ExitToRoomScene()
     {
         SceneManager.LoadScene("Room");

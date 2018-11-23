@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour {
 
     //score start with 0
-    public static int scoreValue = 0;
+    public static int scoreValue;
     Text score;
 
 	// Use this for initialization
 	void Start () {
+
+        scoreValue = 0;
         score = GetComponent<Text>();
 	}
 	
