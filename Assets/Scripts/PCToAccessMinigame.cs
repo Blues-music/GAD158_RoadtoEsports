@@ -16,13 +16,15 @@ public class PCToAccessMinigame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        // Allows interaction when in range
 		if (playerEntered == true && Input.GetButtonDown("Interact"))
         {
-            Debug.Log("hit");
             SceneManager.LoadScene("Mini-Game");
         }
 	}
 
+    // Functions for allowing text to appear and dissapear
     private void OnTriggerEnter2D(Collider2D collision)
     {
         playerEntered = true;

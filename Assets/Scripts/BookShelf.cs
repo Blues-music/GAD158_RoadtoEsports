@@ -20,7 +20,7 @@ public class BookShelf : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        // Use "getX" to access static public variables in other scripts
+        // Use "get" to access static public variables in other scripts
         int getdex = PlayerScript.dex;
         
     }
@@ -28,15 +28,14 @@ public class BookShelf : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // Allows interaction when in range
+        // Changes text when interacted
         if (playerEntered == true && Input.GetButtonDown("Interact") && activityReady == true)
         {
             textField.text = "Reading...";
-            Debug.Log("Working");
-            StartCoroutine(DexBonus(4f));
-            
+            StartCoroutine(DexBonus(4f));            
         }
     }
-
 
     // Functions for allowing text to appear and dissapear
     private void OnTriggerEnter2D(Collider2D collision)

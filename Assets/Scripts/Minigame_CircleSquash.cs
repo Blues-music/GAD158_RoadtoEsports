@@ -5,6 +5,8 @@ using UnityEngine;
 public class Minigame_CircleSquash : MonoBehaviour
 {
 
+    // Not sure where this script is attached
+
     float time;
     public float maxpoints = 100;
 
@@ -36,10 +38,6 @@ public class Minigame_CircleSquash : MonoBehaviour
 
         Destroy(gameObject, 2);
 
-        if (Score.scoreValue == 10)
-        {
-            victoryText.SetActive(true);
-        }
     }
 
 
