@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour {
     static public int str;
     static public int agi;
     static public int dex;
-    static  public int iq;
+    static public int iq;
 
     // Use this for initialization
     void Start()
@@ -43,7 +43,7 @@ public class PlayerScript : MonoBehaviour {
         str = 0;
         agi = 0;
         dex = 0;
-        iq = 0;
+        iq = 50;
     }
 
     // Update is called once per frame

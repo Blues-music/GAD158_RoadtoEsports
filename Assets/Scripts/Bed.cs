@@ -76,7 +76,7 @@ public class Bed : MonoBehaviour {
         activityReady = false;
         yield return new WaitForSeconds(4f);
 
-        activity.DexBonus(PlayerScript.dex, 6);
+        activity.IqBonus(PlayerScript.dex, 6);
         textField.text = "Welcome back to the realm of the living.";
         activityReady = true;
     }
