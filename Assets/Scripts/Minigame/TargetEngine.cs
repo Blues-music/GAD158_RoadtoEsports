@@ -7,6 +7,10 @@ public class TargetEngine : MonoBehaviour {
     // Value to expand and contract 
     float time;
 
+    // Variables to dismiss circle after time
+    float lifeTime;
+    bool killReady;
+
     // Value to alter size of target
     public float targetSize;
 
@@ -14,6 +18,7 @@ public class TargetEngine : MonoBehaviour {
     void Start () {
 
         transform.localScale = new Vector3(0.1f, 0.1f, 0);
+        
 
     }
 	
@@ -21,16 +26,22 @@ public class TargetEngine : MonoBehaviour {
 	void Update () {
 
         time = time + Time.deltaTime;
+        lifeTime = lifeTime + Time.deltaTime;
 
-        if (time % 2 > 1)
+        if (time % 2 > .5)
         {
             transform.localScale -= new Vector3(0.01f, 0.01f, 0);
+            killReady = true;
         }
         else if (time % 2 < 1)
         {
             transform.localScale += new Vector3(0.01F, 0.01F, 0);
         }
 
+        if (lifeTime >= 1 && killReady == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnMouseDown()

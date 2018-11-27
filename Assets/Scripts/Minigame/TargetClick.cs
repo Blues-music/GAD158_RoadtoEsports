@@ -24,7 +24,7 @@ public class TargetClick : MonoBehaviour {
 	void Start () {
         
         timer = spawnTime;
-        spawnTime = spawnTime + (PlayerScript.iq);
+        spawnTime = spawnTime + ((PlayerScript.iq * -0.01f) + 1f);
     }
 	
 	// Update is called once per frame
@@ -38,6 +38,7 @@ public class TargetClick : MonoBehaviour {
             timer = spawnTime;
         }  
 
+        
     }
 
     void SpawnTarget()
@@ -45,4 +46,6 @@ public class TargetClick : MonoBehaviour {
         Vector2 spawnLocation = new Vector2(Random.Range(minY, maxY), Random.Range(minX, maxX));
         Instantiate(circle1, spawnLocation, Quaternion.identity);
     }
+
+    
 }
