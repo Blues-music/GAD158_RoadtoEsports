@@ -16,6 +16,9 @@ public class Interaction
     {
 
     }
+
+
+
 }
     public class ActivityBonus
     {
@@ -28,8 +31,6 @@ public class Interaction
             PlayerScript.iq = attribute + bonus;
             Debug.Log(PlayerScript.iq);
             return PlayerScript.iq;
-        }
-
-       
+        }  
     }
 

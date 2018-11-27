@@ -1265,12 +1265,12 @@ GameObject:
   - component: {fileID: 294054877}
   - component: {fileID: 294054876}
   m_Layer: 10
-  m_Name: Image
+  m_Name: ImgOfDream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &294054875
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1286,8 +1286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 186.05, y: 164}
-  m_SizeDelta: {x: 705.2, y: 510.4}
+  m_AnchoredPosition: {x: 50, y: 95.078}
+  m_SizeDelta: {x: 337.78, y: 244.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &294054876
 MonoBehaviour:
