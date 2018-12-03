@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Bed : MonoBehaviour {
+public class BookShelf : MonoBehaviour {
 
     ActivityBonus activity = new ActivityBonus();
     public GameObject text;
     public Text textField;
 
-    int dex;
+    int iq;
 
     // Bool used to register if player is within collision trigger
     bool playerEntered;
@@ -17,25 +17,23 @@ public class Bed : MonoBehaviour {
     bool activityReady = true;
 
 
-    // Use this for initialization
-    void Start()
-    {
+	// Use this for initialization
+	void Start () {
 
         // Use "get" to access static public variables in other scripts
-        int getdex = PlayerScript.dex;
-
+        int getiq = PlayerScript.iq;
+        
     }
-
-    // Update is called once per frame
-    void Update()
-    {
+	
+	// Update is called once per frame
+	void Update () {
 
         // Allows interaction when in range
         // Changes text when interacted
         if (playerEntered == true && Input.GetButtonDown("Interact") && activityReady == true)
         {
-            textField.text = "Sleeping~zzZ";
-            StartCoroutine(DexBonus(4f));
+            textField.text = "Reading...";
+            StartCoroutine(IqBonus(4f));            
         }
     }
 
@@ -53,13 +51,13 @@ public class Bed : MonoBehaviour {
     }
 
     // Using this coroutine is a solution to invoking the function after a delay
-    IEnumerator DexBonus(float time)
+    IEnumerator IqBonus(float time)
     {
         activityReady = false;
         yield return new WaitForSeconds(4f);
 
-        activity.DexBonus(PlayerScript.dex, 6);
-        textField.text = "Finish Sleeping~";
+        activity.IqBonus(PlayerScript.iq, 6);
+        textField.text = "Good job! Another?";
         activityReady = true;
     }
 }
