@@ -16,10 +16,10 @@ public class TargetEngine : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-        transform.localScale = new Vector3(0.1f, 0.1f, 0);
-        
-
+         
+        // Starting scale of target
+        transform.localScale = new Vector3(0f, 0f, 0);
+       
     }
 	
 	// Update is called once per frame
@@ -28,17 +28,26 @@ public class TargetEngine : MonoBehaviour {
         time = time + Time.deltaTime;
         lifeTime = lifeTime + Time.deltaTime;
 
-        if (time % 2 > .5)
+        // Expands then contracts targets. Based on "modulo" (the % sign). Essentially expands for a second then contracts for a second.
+        // Vector3 here changes size of oscillation
+        if (time % 2 > 1)
         {
-            transform.localScale -= new Vector3(0.01f, 0.01f, 0);
+            transform.localScale -= new Vector3(0.02f, 0.02f, 0);
             killReady = true;
         }
         else if (time % 2 < 1)
         {
-            transform.localScale += new Vector3(0.01F, 0.01F, 0);
+            transform.localScale += new Vector3(0.02F, 0.02F, 0);
         }
 
-        if (lifeTime >= 1 && killReady == true)
+        // Destroys targets after set time
+        if (lifeTime >= 2 && killReady == true)
+        {
+            Destroy(gameObject);
+        }
+
+        // Destroys targets left over after victory
+        if (Time.timeScale == 0)
         {
             Destroy(gameObject);
         }

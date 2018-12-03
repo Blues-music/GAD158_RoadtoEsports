@@ -53,3 +53,9 @@ TagManager:
   - name: Player
     uniqueID: 1266103827
     locked: 0
+  - name: MinigameBackground
+    uniqueID: 2920061187
+    locked: 0
+  - name: MinigameForeground
+    uniqueID: 1522805179
+    locked: 0
