@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TargetClick : MonoBehaviour {
 
@@ -20,10 +21,14 @@ public class TargetClick : MonoBehaviour {
     // Referencing the target
     public GameObject circle1;
 
+    // Referecning UI components
+    public GameObject EndGame;
+
 	// Use this for initialization
 	void Start () {
         
         timer = spawnTime;
+        // This equation takes the player's attribute value and turns it into a 
         spawnTime = spawnTime + ((PlayerScript.iq * -0.01f) + 1f);
     }
 	
@@ -32,13 +37,19 @@ public class TargetClick : MonoBehaviour {
 
         timer = timer - Time.deltaTime;
 
+        // Spawns target when 0 is reached from spawnTime
         if (timer <= 0f)
         {
             SpawnTarget();
             timer = spawnTime;
-        }  
-
+        }
         
+        // Ends game when score is reached
+        if (Score.scoreValue == 20)
+        {
+            Time.timeScale = 0;
+            EndGame.SetActive(true);
+        }
     }
 
     void SpawnTarget()
@@ -47,5 +58,11 @@ public class TargetClick : MonoBehaviour {
         Instantiate(circle1, spawnLocation, Quaternion.identity);
     }
 
-    
+    // Scene unloads and room scene is back
+    public void ExitToRoomScene()
+    {
+        SceneManager.UnloadSceneAsync("Minigame_2");
+        Time.timeScale = 1;
+
+    }
 }

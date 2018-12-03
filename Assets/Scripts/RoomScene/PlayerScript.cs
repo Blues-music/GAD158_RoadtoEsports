@@ -15,7 +15,6 @@ public class PlayerScript : MonoBehaviour {
 
     // Character's move speed value
     public float moveSpeed;
-
     // Animation: Bool to transition from idle to moving
     private bool playerMoving;
     // Animation: Variable which dictates to animator what the idle state is 
@@ -27,8 +26,8 @@ public class PlayerScript : MonoBehaviour {
     // Daclaring attributes
     static public int str;
     static public int agi;
-    static public int dex;
-    static public int iq;
+    static public int dex = 0;
+    static public int iq = 50;
 
     // Use this for initialization
     void Start()
@@ -39,11 +38,6 @@ public class PlayerScript : MonoBehaviour {
         moveSpeed = 4;
 
         animator = GetComponent<Animator>();
-
-        str = 0;
-        agi = 0;
-        dex = 0;
-        iq = 50;
     }
 
     // Update is called once per frame
@@ -75,4 +69,6 @@ public class PlayerScript : MonoBehaviour {
         animator.SetFloat("LastMoveX", lastMove.x);
         animator.SetFloat("LastMoveY", lastMove.y);
     }
+
+    
 }
