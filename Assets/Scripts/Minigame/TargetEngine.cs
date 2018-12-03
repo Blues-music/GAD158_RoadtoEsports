@@ -14,12 +14,19 @@ public class TargetEngine : MonoBehaviour {
     // Value to alter size of target
     public float targetSize;
 
+    //Audio
+    public AudioSource FatClap;
+
     // Use this for initialization
     void Start () {
          
         // Starting scale of target
         transform.localScale = new Vector3(0f, 0f, 0);
        
+
+        transform.localScale = new Vector3(0.1f, 0.1f, 0);
+        FatClap = GameObject.Find("fat-clap").GetComponent<AudioSource>();
+
     }
 	
 	// Update is called once per frame
@@ -51,6 +58,7 @@ public class TargetEngine : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        FatClap.Play();
     }
 
     public void OnMouseDown()
@@ -58,5 +66,6 @@ public class TargetEngine : MonoBehaviour {
         Destroy(gameObject);
         // Using from "Score" script
         Score.scoreValue += 1;
+       
     }
 }

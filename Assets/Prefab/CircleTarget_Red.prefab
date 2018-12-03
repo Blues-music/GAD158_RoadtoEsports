@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSize: 0
+  FatClap: {fileID: 0}
 --- !u!212 &212007886269644754
 SpriteRenderer:
   m_ObjectHideFlags: 1
