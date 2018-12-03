@@ -22,8 +22,7 @@ public class TargetClick : MonoBehaviour {
     public GameObject circle1;
 
     // Referecning UI components
-    public GameObject victoryText;
-    public GameObject exitButton;
+    public GameObject EndGame;
 
 	// Use this for initialization
 	void Start () {
@@ -49,8 +48,7 @@ public class TargetClick : MonoBehaviour {
         if (Score.scoreValue == 20)
         {
             Time.timeScale = 0;
-            victoryText.SetActive(true);
-            exitButton.SetActive(true);
+            EndGame.SetActive(true);
         }
     }
 
