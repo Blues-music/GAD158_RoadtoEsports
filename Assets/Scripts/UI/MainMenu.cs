@@ -14,10 +14,10 @@ public class MainMenu : MonoBehaviour {
     void Update() {
 
     }
-    // once  Play Button is clicked, load scene "1"
+    // once Play Button is clicked, load scene "4"(Dream)
     public void Play ()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
     // once clicked, quit the game/application.
     public void Quit()
