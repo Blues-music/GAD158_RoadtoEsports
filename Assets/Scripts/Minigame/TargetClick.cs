@@ -51,7 +51,7 @@ public class TargetClick : MonoBehaviour {
         }
         
         // Ends game when score is reached
-        if (Score.scoreValue == 20 && gameOver == false)
+        if (Score.scoreValue == 50 && gameOver == false)
         {
             gameOver = true;
             finalScore = Score.scoreValue;
