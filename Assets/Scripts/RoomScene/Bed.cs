@@ -8,10 +8,6 @@ public class Bed : MonoBehaviour {
     ActivityBonus activity = new ActivityBonus();
     public GameObject text;
     public Text textField;
-    public Image img;
-    public bool isImgOn;
-
-
 
     int dex;
 
@@ -28,7 +24,6 @@ public class Bed : MonoBehaviour {
         // Use "get" to access static public variables in other scripts
         int getdex = PlayerScript.dex;
 
-      
     }
 
     // Update is called once per frame
@@ -36,23 +31,10 @@ public class Bed : MonoBehaviour {
     {
 
         // Allows interaction when in range
-        // Changes text to dream image when interacted 
+        // Changes text when interacted
         if (playerEntered == true && Input.GetButtonDown("Interact") && activityReady == true)
         {
-
-            if (isImgOn == true)
-            {
-
-                img.enabled = false;
-                isImgOn = false;
-            }
-
-            else
-            {
-
-                img.enabled = true;
-                isImgOn = true;
-            }
+            textField.text = "     zzzZZZ";
             StartCoroutine(DexBonus(4f));
         }
     }
@@ -76,8 +58,8 @@ public class Bed : MonoBehaviour {
         activityReady = false;
         yield return new WaitForSeconds(4f);
 
-        activity.IqBonus(PlayerScript.dex, 6);
-        textField.text = "Welcome back to the realm of the living.";
+    
+        textField.text = "Refreshed and Ready!";
         activityReady = true;
     }
 }
