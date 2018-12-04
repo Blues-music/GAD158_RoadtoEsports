@@ -17,6 +17,5 @@ public class MissClick : MonoBehaviour {
     private void OnMouseDown()
     {
         Score.scoreValue -= 1;
-        Debug.Log(Score.scoreValue);
     }
 }

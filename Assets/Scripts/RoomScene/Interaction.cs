@@ -29,7 +29,7 @@ public class Interaction
             // Takes the player scripts dex and adds a bonus
             // Would like to add functionality to give diminishing returns
             PlayerScript.iq = attribute + bonus;
-            Debug.Log(PlayerScript.iq);
+            Debug.Log("Current iq: " + PlayerScript.iq);
             return PlayerScript.iq;
         }  
     }
