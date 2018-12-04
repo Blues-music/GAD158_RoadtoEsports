@@ -15,6 +15,12 @@ public class TargetClick : MonoBehaviour {
     float minX = -4f;
     float maxX = 4f;
 
+    //victory audio
+   /* public AudioClip VictoryA;
+    AudioSource audio;
+    public bool alreadyplayed = false;
+    */
+
     // value to get current iq
     float currentIQ;
 
@@ -36,6 +42,8 @@ public class TargetClick : MonoBehaviour {
         timer = spawnTime;
         // This equation takes the player's attribute value and turns it into a 
         spawnTime = spawnTime + ((PlayerScript.iq * -0.01f) + 1f);
+        //Victory Audio
+       //audio = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -59,6 +67,7 @@ public class TargetClick : MonoBehaviour {
             SkillBar.totalScore = SkillBar.totalScore + finalScore;
             Debug.Log("Current score: " + SkillBar.totalScore);
             EndGame.SetActive(true);
+           
         }
     }
 

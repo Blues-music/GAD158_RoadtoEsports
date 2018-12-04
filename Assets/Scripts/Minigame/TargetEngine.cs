@@ -24,6 +24,7 @@ public class TargetEngine : MonoBehaviour {
         transform.localScale = new Vector3(0f, 0f, 0);
        
         transform.localScale = new Vector3(0.1f, 0.1f, 0);
+
         FatClap = GameObject.Find("fat-clap").GetComponent<AudioSource>();
 
         if  (PlayerScript.dex > 20)
@@ -36,7 +37,7 @@ public class TargetEngine : MonoBehaviour {
         }
         else
         {
-            targetSize = 0.01f;
+            targetSize = 0.005f;
         }
     }
 	
