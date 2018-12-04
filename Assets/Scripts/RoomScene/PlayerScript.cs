@@ -26,8 +26,8 @@ public class PlayerScript : MonoBehaviour {
     // Daclaring attributes
     static public int str;
     static public int agi;
-    static public int dex = 0;
-    static public int iq = 50;
+    static public int dex = 40;
+    static public int iq = 0;
 
     // Use this for initialization
     void Start()
