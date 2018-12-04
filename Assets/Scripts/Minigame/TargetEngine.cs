@@ -36,7 +36,7 @@ public class TargetEngine : MonoBehaviour {
         }
         else
         {
-            targetSize = 0.005f;
+            targetSize = 0.01f;
         }
     }
 	
