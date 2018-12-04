@@ -24,6 +24,12 @@ public class TargetClick : MonoBehaviour {
     // Referecning UI components
     public GameObject EndGame;
 
+    // To finalise the player's score for skillbar
+    float finalScore;
+
+    // To stop game updating win actions on update
+    bool gameOver = false;
+
 	// Use this for initialization
 	void Start () {
         
@@ -45,9 +51,13 @@ public class TargetClick : MonoBehaviour {
         }
         
         // Ends game when score is reached
-        if (Score.scoreValue == 20)
+        if (Score.scoreValue == 20 && gameOver == false)
         {
+            gameOver = true;
+            finalScore = Score.scoreValue;
             Time.timeScale = 0;
+            SkillBar.totalScore = SkillBar.totalScore + finalScore;
+            Debug.Log("Current score: " + SkillBar.totalScore);
             EndGame.SetActive(true);
         }
     }
