@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour {
     bool moveX;
     bool moveY;
 
+    // To allow player to move
+    public static bool playerCanMove = true;
+
     // Declaring animator
     private Animator animator;
 
@@ -40,19 +43,23 @@ public class PlayerMovement : MonoBehaviour {
         // Code that allows player to move character
         // Works by manipulating a virtual scale, which ranges from -1 to 1.
         // TO DO: Disallow diagonal movement
-        if (Input.GetAxisRaw("Horizontal") > 0.2f || Input.GetAxisRaw("Horizontal") < -0.2f)
+        if (playerCanMove == true)
         {
-            transform.Translate(new Vector3((Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime), 0f, 0f));
-            playerMoving = true;
-            lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
-        }
+            if (Input.GetAxisRaw("Horizontal") > 0.2f || Input.GetAxisRaw("Horizontal") < -0.2f)
+            {
+                transform.Translate(new Vector3((Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime), 0f, 0f));
+                playerMoving = true;
+                lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
+            }
 
-        if (Input.GetAxisRaw("Vertical") > 0.2f || Input.GetAxisRaw("Vertical") < -0.2f)
-        {
-            transform.Translate(new Vector3(0f, (Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime), 0f));
-            playerMoving = true;
-            lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
+            if (Input.GetAxisRaw("Vertical") > 0.2f || Input.GetAxisRaw("Vertical") < -0.2f)
+            {
+                transform.Translate(new Vector3(0f, (Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime), 0f));
+                playerMoving = true;
+                lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
+            }
         }
+        
 
         // Values in animator set here
         animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));

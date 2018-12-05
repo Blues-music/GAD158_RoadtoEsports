@@ -11,7 +11,7 @@ public class TargetClick : MonoBehaviour {
     float spawnTime = 0f;
     // values to spawn a new target somewhere random
     float minY = -4f;
-    float maxY = 4f;
+    float maxY = 3.5f;
     float minX = -4f;
     float maxX = 4f;
 
@@ -59,7 +59,7 @@ public class TargetClick : MonoBehaviour {
         }
         
         // Ends game when score is reached
-        if (Score.scoreValue == 50 && gameOver == false)
+        if (Score.scoreValue == 20 && gameOver == false)
         {
             gameOver = true;
             finalScore = Score.scoreValue;
@@ -67,13 +67,14 @@ public class TargetClick : MonoBehaviour {
             SkillBar.totalScore = SkillBar.totalScore + finalScore;
             Debug.Log("Current score: " + SkillBar.totalScore);
             EndGame.SetActive(true);
-           
+            PlayerMovement.playerCanMove = true;
+
         }
     }
 
     void SpawnTarget()
     {
-        Vector2 spawnLocation = new Vector2(Random.Range(minY, maxY), Random.Range(minX, maxX));
+        Vector2 spawnLocation = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
         Instantiate(circle1, spawnLocation, Quaternion.identity);
     }
 

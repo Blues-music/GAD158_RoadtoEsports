@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SkillBar : MonoBehaviour {
 
     // Referencing the skill bar
-    public Image Bar;
+    public Image bar;
 
     // Value used to collect score from minigame
     public static float totalScore;
@@ -19,7 +19,7 @@ public class SkillBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Bar.fillAmount = (totalScore * 0.001f);
+        bar.fillAmount = (totalScore * 0.001f);
 
     }
 }

@@ -6,8 +6,15 @@ using UnityEngine.UI;
 public class Bed : MonoBehaviour {
 
     ActivityBonus activity = new ActivityBonus();
+
     public GameObject text;
     public Text textField;
+
+    public SpriteRenderer bedSprite;
+    public Sprite bedEmpty;
+    public Sprite bedCharSleeping;
+
+    public GameObject Player;
 
     int dex;
 
@@ -19,11 +26,11 @@ public class Bed : MonoBehaviour {
 
     // Use this for initialization
     void Start()
-    {
-
+    {   
         // Use "get" to access static public variables in other scripts
         int getdex = PlayerScript.dex;
 
+        bedSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -55,11 +62,15 @@ public class Bed : MonoBehaviour {
     // Using this coroutine is a solution to invoking the function after a delay
     IEnumerator DexBonus(float time)
     {
+        bedSprite.sprite = bedCharSleeping;
+        Player.SetActive(false);
         activityReady = false;
         yield return new WaitForSeconds(4f);
 
-    
+        bedSprite.sprite = bedEmpty;
+        Player.SetActive(true);
         textField.text = "Refreshed and Ready!";
         activityReady = true;
+
     }
 }

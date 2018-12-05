@@ -9,13 +9,13 @@ public class BookShelf : MonoBehaviour {
     public GameObject text;
     public Text textField;
 
-    int iq;
-
     // Bool used to register if player is within collision trigger
     bool playerEntered;
     // Used to stop player from stacking actions
     bool activityReady = true;
 
+    // Referencing player's iq text bobble
+    public GameObject iqUpText;
 
 	// Use this for initialization
 	void Start () {
@@ -53,11 +53,21 @@ public class BookShelf : MonoBehaviour {
     // Using this coroutine is a solution to invoking the function after a delay
     IEnumerator IqBonus(float time)
     {
+        PlayerMovement.playerCanMove = false;
         activityReady = false;
         yield return new WaitForSeconds(4f);
 
         activity.IqBonus(PlayerScript.iq, 6);
         textField.text = "Good job! Another?";
         activityReady = true;
+        PlayerMovement.playerCanMove = true;
+        IqUpTextGenerator();
+    }
+
+    // Function to enable text indicating change in iq;
+    // This should be achieved in "PlayerScript" but this is easier for what we're doing
+    void IqUpTextGenerator()
+    {
+        iqUpText.SetActive(true);
     }
 }

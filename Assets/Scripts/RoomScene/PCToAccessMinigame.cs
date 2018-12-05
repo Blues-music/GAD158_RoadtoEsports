@@ -13,7 +13,7 @@ public class PCToAccessMinigame : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Player.GetComponent<PlayerScript>();
+        
 	}
 	
 	// Update is called once per frame
@@ -23,6 +23,7 @@ public class PCToAccessMinigame : MonoBehaviour {
 		if (playerEntered == true && Input.GetButtonDown("Interact"))
         {
             SceneManager.LoadScene("Minigame_2", LoadSceneMode.Additive);
+            PlayerMovement.playerCanMove = false;
         }
 	}
 
@@ -37,6 +38,6 @@ public class PCToAccessMinigame : MonoBehaviour {
     {
         playerEntered = false;
         text.SetActive(false);
-        // PlayerScript.SetActive
+        
     }
 }
