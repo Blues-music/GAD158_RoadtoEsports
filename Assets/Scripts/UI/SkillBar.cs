@@ -7,6 +7,7 @@ public class SkillBar : MonoBehaviour {
 
     // Referencing the skill bar
     public Image bar;
+    public GameObject Button;
 
     // Value used to collect score from minigame
     public static float totalScore;
@@ -14,6 +15,7 @@ public class SkillBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         totalScore = 0;
+        
 	}
 	
 	// Update is called once per frame
@@ -21,5 +23,10 @@ public class SkillBar : MonoBehaviour {
 
         bar.fillAmount = (totalScore * 0.01f);
 
+        if(totalScore >= 100)
+        {
+            Button.SetActive(true);
+        }
+    
     }
 }
