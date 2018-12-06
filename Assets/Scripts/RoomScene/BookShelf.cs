@@ -8,6 +8,8 @@ public class BookShelf : MonoBehaviour {
     ActivityBonus activity = new ActivityBonus();
     public GameObject text;
     public Text textField;
+    //IQ up audio
+    public AudioSource IQAudio;
 
     // Bool used to register if player is within collision trigger
     bool playerEntered;
@@ -62,6 +64,8 @@ public class BookShelf : MonoBehaviour {
         activityReady = true;
         PlayerMovement.playerCanMove = true;
         IqUpTextGenerator();
+        //When the player finish reading, play this audio
+        IQAudio.Play();
     }
 
     // Function to enable text indicating change in iq;
