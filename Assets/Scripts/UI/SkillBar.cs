@@ -19,7 +19,7 @@ public class SkillBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        bar.fillAmount = (totalScore * 0.001f);
+        bar.fillAmount = (totalScore * 0.01f);
 
     }
 }
