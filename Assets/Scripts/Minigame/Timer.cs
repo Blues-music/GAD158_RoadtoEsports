@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
     //Count down time start
-    float timeRemaining = 60;
+	public static  float timeRemaining = 60;
     public Text timerText;
 
 	// Use this for initialization

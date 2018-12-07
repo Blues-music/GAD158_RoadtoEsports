@@ -69,7 +69,16 @@ public class TargetClick : MonoBehaviour {
             EndGame.SetActive(true);
             PlayerMovement.playerCanMove = true;
 
-        }
+			if (Timer.timeRemaining >= 0 && gameOver == false) 
+		{
+			gameOver = true;
+			Time.timeScale = 0;
+			SkillBar.totalScore = SkillBar.totalScore + finalScore;
+			Debug.Log("Current score: " + SkillBar.totalScore);
+			EndGame.SetActive(true);
+			PlayerMovement.playerCanMove = true;
+		}
+       }
     }
 
     void SpawnTarget()
